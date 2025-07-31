@@ -163,22 +163,17 @@ document.addEventListener('DOMContentLoaded', function () {
         exerciseDiv.querySelector('.copy-exercise').addEventListener('click', function (event) {
             const exerciseIndex = parseInt(this.getAttribute('data-exercise'));
             const exercise = allExercises[exerciseIndex];
-            const exerciseText = `Exercise ${exercise.number}\n\nOriginal: ${exercise.original}\n\nCloze: ${exercise.cloze}\n\n${exercise.answers}`;
+            const exerciseText = `Cloze paragraph: ${exercise.cloze}\n\n${exercise.answers}`;
             copyToClipboard(exerciseText, event);
         });
     }
 
     function downloadAllExercises() {
-        let content = 'Cloze Exercises\n';
-        content += '='.repeat(50) + '\n\n';
+        let content = 'Cloze Exercises\n\n';
 
         allExercises.forEach(exercise => {
-            // content = `Exercise ${exercise.number}\n`;
-            // content += '-'.repeat(20) + '\n';
-            // content += `Original: ${exercise.original}\n\n`;
             content += `Cloze paragraph: ${exercise.cloze}\n`;
             content += `${exercise.answers}\n\n`;
-            // content += '='.repeat(50) + '\n\n';
         });
 
         const blob = new Blob([content], { type: 'text/plain' });
@@ -198,8 +193,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let content = 'Cloze Exercises\n\n';
 
         allExercises.forEach(exercise => {
-            // content += `Exercise ${exercise.number}\n`;
-            // content += `Original: ${exercise.original}\n`;
             content += `Cloze paragraph: ${exercise.cloze}\n`;
             content += `${exercise.answers}\n\n`;
         });
