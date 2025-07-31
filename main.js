@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // content = `Exercise ${exercise.number}\n`;
             // content += '-'.repeat(20) + '\n';
             // content += `Original: ${exercise.original}\n\n`;
-            content = `Cloze paragraph: ${exercise.cloze}\n`;
+            content += `Cloze paragraph: ${exercise.cloze}\n`;
             content += `${exercise.answers}\n\n`;
             // content += '='.repeat(50) + '\n\n';
         });
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
         allExercises.forEach(exercise => {
             // content += `Exercise ${exercise.number}\n`;
             // content += `Original: ${exercise.original}\n`;
-            content = `Cloze paragraph: ${exercise.cloze}\n`;
+            content += `Cloze paragraph: ${exercise.cloze}\n`;
             content += `${exercise.answers}\n\n`;
         });
 
