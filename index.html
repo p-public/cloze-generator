@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://www.cloudflare.com/favicon.ico" />
+    <title>Cloze Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Cloze Generator</h1>
+            <p>Generate Duolingo-style cloze exercises from your paragraphs</p>
+        </header>
+
+        <main>
+            <form id="clozeForm">
+                <div class="input-group">
+                    <label for="paragraphs">Enter paragraphs (one per line):</label>
+                    <textarea id="paragraphs" name="paragraphs"
+                        placeholder="Input your text here, one paragraph per line" rows="8" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="blankCount">How many blank words per paragraph (default 15):</label>
+                    <input type="number" id="blankCount" name="blankCount" value="15" min="1" max="50">
+                </div>
+
+                <button type="submit" class="generate-btn">Generate Cloze Exercises</button>
+            </form>
+
+            <div id="results" class="results hidden">
+                <h2>Generated Cloze Exercises</h2>
+
+                <div class="actions">
+                    <button id="downloadAll" class="action-btn download-btn">Download All Exercises</button>
+                    <button id="copyAll" class="action-btn">Copy All to Clipboard</button>
+                </div>
+
+                <div id="clozeExercises" class="cloze-exercises">
+                    <!-- Results will be inserted here -->
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

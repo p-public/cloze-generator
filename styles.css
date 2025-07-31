@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1c2e 0%, #2d1f3d 100%);
+    min-height: 100vh;
+    color: #e1e1e1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+main {
+    background: #1e1e1e;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e1e1e1;
+}
+
+textarea,
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    background: #2d2d2d;
+    color: #e1e1e1;
+}
+
+textarea:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.results {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #333;
+}
+
+.results.hidden {
+    display: none;
+}
+
+.results h2 {
+    color: #e1e1e1;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.cloze-exercises {
+    margin-bottom: 30px;
+}
+
+.exercise-item {
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.exercise-header h3 {
+    color: #e1e1e1;
+    margin: 0;
+}
+
+.exercise-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.result-section {
+    margin-bottom: 20px;
+}
+
+.result-section h4 {
+    color: #e1e1e1;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.original-text {
+    background: #1a2634;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #2196f3;
+    font-family: inherit;
+    line-height: 1.5;
+    color: #e1e1e1;
+}
+
+.cloze-text,
+.answer-key {
+    background: #2d2d2d;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #667eea;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #e1e1e1;
+}
+
+.answer-key {
+    background: #1a2e1a;
+    border-left-color: #28a745;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    background: #495057;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #343a40;
+}
+
+.download-btn {
+    background: #c25d10;
+}
+
+.download-btn:hover {
+    background: #a34a0c;
+}
+
+.copy-exercise {
+    background: #0f7182;
+    font-size: 12px;
+    padding: 8px 15px;
+}
+
+.copy-exercise:hover {
+    background: #0a4f5d;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+
+    .exercise-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .exercise-actions {
+        width: 100%;
+    }
+
+    .copy-exercise {
+        width: 100%;
+    }
+}
